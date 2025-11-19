@@ -11,13 +11,13 @@ except:
     st.stop()
 
 # 2. App Title and Description
-st.title("🏦 Bank Account Predictor")
+st.title("Bank Account Predictor")
 st.write("Enter the details below to check if a person is likely to have a bank account.")
 
 # 3. Create the Input Form
 with st.form("prediction_form"):
-    # Categorical Inputs (Dropdowns)
-    # Note: You might want to update these lists with the exact unique values from your dataset if I missed any
+    # Categorical Inputs 
+   
     col1, col2 = st.columns(2)
 
     with col1:
@@ -58,7 +58,7 @@ if submitted:
         'job_type': [job],
         'household_size': [household],
         'age_of_respondent': [age],
-        'year': [2018]  # Hardcoded as it's likely just a context feature
+        'year': [2018]  
     })
 
     # B. One-Hot Encoding
@@ -76,4 +76,5 @@ if submitted:
     if prediction == 1:
         st.success(f"Prediction: YES, likely to have a bank account. (Confidence: {probability:.0%})")
     else:
+
         st.warning(f"Prediction: NO, unlikely to have a bank account. (Confidence: {1 - probability:.0%})")
