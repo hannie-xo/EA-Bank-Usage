@@ -52,17 +52,18 @@ rf_model.fit(X_train, y_train)
 # 4. Evaluate
 y_pred = rf_model.predict(X_test)
 
-print("\n--- Random Forest Performance ---")
+print("\n Random Forest Performance")
 print(f"Accuracy Score: {accuracy_score(y_test, y_pred):.2f}")
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
 import joblib
 
-#  Save the "Brain" (The trained model)
+#  Save the model
 joblib.dump(rf_model, 'random_forest_model.pkl')
 
-# 2. Save the "Dictionary" (The exact column names used during training)
+
 model_columns = list(X_train.columns)
 joblib.dump(model_columns, 'model_columns.pkl')
+
 
